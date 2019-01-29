@@ -43,7 +43,8 @@ RUN apt-get update && apt-get install -y \
 ADD extension /tmp/extension
 
 # install xdebug
-RUN sh /tmp/extension/xdebug/install.sh
+#RUN sh /tmp/extension/xdebug/install.sh
+RUN php /tmp/extension/ExtInstaller.php -n xdebug
 
 # delete extension added
 RUN rm -rf /tmp/extension
