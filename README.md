@@ -41,12 +41,12 @@ default 127.0.0.1
 ## FPM_PORT
 default 9000
 
-## XDEUBG_REMOTE_HOST
+## XDEBUG_REMOTE_HOST
 default 172.17.0.1
 
 xdebug 连接宿主机器（准确的说应该开发机器的xdebug监听服务的机器的地址）的地址
 
-## XDEUBG_REMOTE_PORT
+## XDEBUG_REMOTE_PORT
 19001
 
 xdebug 连接宿主机器（准确的说应该开发机器的xdebug监听服务）的端口
