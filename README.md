@@ -47,6 +47,11 @@ default 172.17.0.1
 xdebug 连接宿主机器（准确的说应该开发机器的xdebug监听服务的机器的地址）的地址
 
 ## XDEBUG_REMOTE_PORT
-19001
+default 19001
 
 xdebug 连接宿主机器（准确的说应该开发机器的xdebug监听服务）的端口
+
+## XDEBUG_IDE_KEY
+default PHPSTORM
+
+xdebug idekey

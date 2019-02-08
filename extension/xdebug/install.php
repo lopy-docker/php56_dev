@@ -60,7 +60,8 @@ class XdebugExtInstaller extends ExtInstaller{
         $this->optionParams[]= '[XDebug]';
         $this->optionParams[]= 'xdebug.enable=1';
         $this->optionParams[]= 'xdebug.remote_enable=1';
-        $this->optionParams[]= 'xdebug.idekey=PHPSTORM';
+        //$this->optionParams[]= 'xdebug.idekey=PHPSTORM';
+        $this->optionParams[]= 'xdebug.idekey=\${XDEBUG_IDE_KEY}';
         $this->optionParams[]= 'xdebug.remote_host=\${XDEBUG_REMOTE_HOST}';
         $this->optionParams[]= 'xdebug.remote_port=\${XDEBUG_REMOTE_PORT}';
         $this->optionParams[]= 'xdebug.remote_log=/var/log/php-xdebug_remote.log';
