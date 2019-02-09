@@ -53,5 +53,11 @@ RUN rm -rf /tmp/extension
 # utf8 ,support zh-cn
 ENV LANG C.UTF-8
 
+RUN cd /usr/local/bin \
+    && curl -sS https://getcomposer.org/installer | php \
+    && echo "export PATH=\$PATH:/root/.composer/vendor/bin" >> /root/.bashrc \
+    && echo "export PATH=\$PATH:/root/.composer/vendor/bin" >> /root/.profile \
+    && echo "export PATH=\$PATH:/root/.composer/vendor/bin" >> /etc/profile 
+
 # Commands when creating a new container
 #CMD ["php-fpm ","-F"]
