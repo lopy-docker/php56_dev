@@ -50,7 +50,8 @@ RUN php /tmp/extension/ExtInstaller.php -n xdebug
 # delete extension added
 RUN rm -rf /tmp/extension
 
-
+# utf8 ,support zh-cn
+ENV LANG C.UTF-8
 
 # Commands when creating a new container
 #CMD ["php-fpm ","-F"]
