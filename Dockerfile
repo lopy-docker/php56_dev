@@ -37,12 +37,14 @@ RUN apt-get update && apt-get install -y \
         libjpeg62-turbo-dev \
         libpng-dev \
         zip \
+        sudo \
         procps \
         inetutils-ping \
     && docker-php-ext-install -j$(nproc) iconv \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd \
-    && docker-php-ext-install zip
+    && docker-php-ext-install zip \
+    && echo "debian  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 
 # install extensions can't install by docker-php-ext-install or pecl
