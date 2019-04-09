@@ -52,10 +52,10 @@ ADD extension /tmp/extension
 
 # install xdebug
 #RUN sh /tmp/extension/xdebug/install.sh
-RUN php /tmp/extension/ExtInstaller.php -n xdebug
+RUN php /tmp/extension/ExtInstaller.php -n xdebug \
+    php /tmp/extension/ExtInstaller.php -n swoole \
+    && rm -rf /tmp/extension
 
-# delete extension added
-RUN rm -rf /tmp/extension
 
 # utf8 ,support zh-cn
 ENV LANG C.UTF-8
