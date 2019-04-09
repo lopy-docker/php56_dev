@@ -53,7 +53,7 @@ ADD extension /tmp/extension
 # install xdebug
 #RUN sh /tmp/extension/xdebug/install.sh
 RUN php /tmp/extension/ExtInstaller.php -n xdebug \
-    php /tmp/extension/ExtInstaller.php -n swoole \
+    && php /tmp/extension/ExtInstaller.php -n swoole \
     && rm -rf /tmp/extension
 
 
