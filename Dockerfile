@@ -67,7 +67,7 @@ RUN cd /tmp \
     && xz -d node.tar.xz \
     && tar -xvf node.tar && rm -rf node.tar \
     && mv node-v10.16.3-linux-x64/ /usr/local/node \
-    && npm -g install bower gulp webpack \
+    && /usr/local/node/bin/npm -g install bower gulp webpack \
     && npm cache clean -f
 
 
