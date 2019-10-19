@@ -62,12 +62,12 @@ ENV LANG C.UTF-8
 
 ## node
 
-RUN cd /tmp
-    &&curl https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz -o node.tar.xz
-    && xz -d node.tar.xz
-    && tar -xvf node.tar && rm -rf node.tar
-    && mv node-v10.16.3-linux-x64/ /usr/local/node
-    && npm -g install bower gulp webpack
+RUN cd /tmp \
+    && curl https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz -o node.tar.xz \
+    && xz -d node.tar.xz \
+    && tar -xvf node.tar && rm -rf node.tar \
+    && mv node-v10.16.3-linux-x64/ /usr/local/node \
+    && npm -g install bower gulp webpack \
     && npm cache clean -f
 
 
