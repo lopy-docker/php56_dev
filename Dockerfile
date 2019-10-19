@@ -60,11 +60,22 @@ RUN php /tmp/extension/ExtInstaller.php -n xdebug \
 # utf8 ,support zh-cn
 ENV LANG C.UTF-8
 
+## node
+
+RUN cd /tmp
+    &&curl https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz -o node.tar.xz
+    && xz -d node.tar.xz
+    && tar -xvf node.tar && rm -rf node.tar
+    && mv node-v10.16.3-linux-x64/ /usr/local/node
+    && npm -g install bower gulp webpack
+    && npm cache clean -f
+
+
 RUN cd /usr/local/bin \
     && curl -sS https://getcomposer.org/installer | php \
-    && echo "export PATH=\$PATH:/root/.composer/vendor/bin" >> /root/.bashrc \
-    && echo "export PATH=\$PATH:/root/.composer/vendor/bin" >> /root/.profile \
-    && echo "export PATH=\$PATH:/root/.composer/vendor/bin" >> /etc/profile 
+    && echo "export PATH=\$PATH:/root/.composer/vendor/bin:/usr/local/node/bin/" >> /root/.bashrc \
+    && echo "export PATH=\$PATH:/root/.composer/vendor/bin:/usr/local/node/bin/" >> /root/.profile \
+    && echo "export PATH=\$PATH:/root/.composer/vendor/bin:/usr/local/node/bin/" >> /etc/profile
 
-# Commands when creating a new container
-#CMD ["php-fpm ","-F"]
+
+
