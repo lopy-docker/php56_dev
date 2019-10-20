@@ -76,7 +76,8 @@ RUN cd /usr/local/bin \
     && curl -sS https://getcomposer.org/installer | php \
     && echo "export PATH=\$PATH:/root/.composer/vendor/bin:/usr/local/node/bin/" >> /root/.bashrc \
     && echo "export PATH=\$PATH:/root/.composer/vendor/bin:/usr/local/node/bin/" >> /root/.profile \
-    && echo "export PATH=\$PATH:/root/.composer/vendor/bin:/usr/local/node/bin/" >> /etc/profile
+    && echo "export PATH=\$PATH:/root/.composer/vendor/bin:/usr/local/node/bin/" >> /etc/profile \
+    && export PATH=\$PATH:/root/.composer/vendor/bin:/usr/local/node/bin/
 
 
 
